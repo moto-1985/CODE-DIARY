@@ -28,13 +28,14 @@
 
 推奨したい使い方：
 １、webブラウジングに特化し情報源のリンクを必ず添付するように設定されている「@Info Anchor」で最新の情報や検索が難しい情報を集めてから、メンションで「@CODE DIARY」に切り替えて保存
+
 ※ CODE DIARYにwebブラウジング機能をつけることも可能だが以下の理由で切り分けた
 １、Info Anchorをブラウジングと情報源のリンクを必ず添付する機能に特化させると使い回しが効きメンションで呼び出すのに便利なGPTsになる
 ２、CODE DIARYをコード量削減と動作精度の向上のため
 
 スプレッドシートの機能だがファイルをアーカイブしてくれてさらに使いやすくなっている：
-１、毎日夜中の0時~1時に前日の質問がまとまったシートを作成。シート名は年月日(YYYYMMDD)。当日分のシート(シート名TODAY)は全部クリアされる
-２、毎月1日の夜中の1時~2時に前月の質問がまとまったファイルを作成して「おもいで」フォルダーに保存する。ファイル名は年月(YYYYMM)。当月分のファイルはすべてクリアされる。
+１、毎日夜中の0時から1時に前日の質問がまとまったシートを作成。シート名は年月日(YYYYMMDD)。当日分のシート(シート名TODAY)は全部クリアされる
+２、毎月1日の夜中の1時から2時に前月の質問がまとまったファイルを作成して「おもいで」フォルダーに保存する。ファイル名は年月(YYYYMM)。当月分のファイルはすべてクリアされる。
 ３、SSを使わなくてもブラウザからスプレッドシートの中身が見れる
 - [秘密のリンク](https://script.google.com/macros/s/AKfycbzUVl64HjKv3GIdB9sUUduRF2RG_w2eHyzaY-p6e2k7wmZ35D8O5WhByE22G7tw0NxYsg/exec)
 
@@ -46,11 +47,11 @@ GPTへの質問と回答のアーカイブを探すのが見辛いし探しに�
 - [SSリンク：DODE DIARY](https://docs.google.com/spreadsheets/d/1yOOfCvK8qQPKXdLUcc6F6_TYFQC4b0JhcVQ9bIwR6tg/edit#gid=1270241343)
 - [アーカイブされたファイルを確認するためのフォルダのリンク](https://drive.google.com/drive/folders/1s98OUxhK1tTlrOCA8M-6esXPt3cdiuuY)
 
-ソースコードのリンク(GASソースだけでなくknowledgeや設定ファイルもすべて公開してます。)
-- [GitHub](https://github.com/moto-1985/hackathonGMO/tree/master)
+ソースコードのリンク(GASソースだけでなく設定ファイルもすべて公開してます。)
+- [GitHub](https://github.com/moto-1985/CODE-DIARY)
 
 機能補完し合っているGPTs
-- [CODE DIARY](https://chat.openai.com/g/g-wxE6RkphE-faq-collector)
+- [CODE DIARY](https://chat.openai.com/g/g-Sjg9AZtUb-code-diary)
 - [Info Anchor](https://chat.openai.com/g/g-Z1xoHvBTH-info-anchor)
 
 Conversation Startar
