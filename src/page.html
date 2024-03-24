@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+</head>
+<body onload="loadSheetData('TODAY')">
+  <div id="tabs">
+    <? for (let name of sheetNames) { ?>
+      <button class="tab" onclick="loadSheetData('<?= name ?>')"><?= name ?></button>
+    <? } ?>
+  </div>
+  <div id="sheetData"></div>
+
+  <script>
+    function loadSheetData(sheetName) {
+      google.script.run.withSuccessHandler(showData).getSheetData(sheetName);
+    }
+
+    function showData(data) {
+      const container = document.getElementById("sheetData");
+      container.innerHTML = "";
+      const table = document.createElement("table");
+      data.forEach(function(row) {
+        const tr = document.createElement("tr");
+        row.forEach(function(cell) {
+          const td = document.createElement("td");
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      });
+      container.appendChild(table);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: Spreadsheet Data Integration API
+  description: API to save and retrieve question, answer, and summary data from a Google Spreadsheet.
+  version: 1.1.0
+servers:
+  - url: 'https://script.google.com'
+    description: Google Apps Script Web AppのURL
+paths:
+  /macros/s/AKfycbzUVl64HjKv3GIdB9sUUduRF2RG_w2eHyzaY-p6e2k7wmZ35D8O5WhByE22G7tw0NxYsg/exec:
+    post:
+      summary: Save data to the spreadsheet
+      description: Receives data and saves it to a specified Google Spreadsheet.
+      operationId: saveData
+      requestBody:
+        description: Data containing question, answer, and summary.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - question
+                - answer
+                - summary
+              properties:
+                question:
+                  type: string
+                  description: The question to be saved.
+                answer:
+                  type: string
+                  description: The answer to the question.
+                summary:
+                  type: string
+                  description: A brief summary of the question and answer.
+      responses:
+        '200':
+          description: Data saved successfully.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Data saved successfully.
+    get:
+      summary: Retrieve questions and answers
+      description: Retrieves past questions and answers based on the 'get' action query parameter.
+      operationId: getQuestions
+      parameters:
+        - name: action
+          in: query
+          required: true
+          description: Action parameter must be 'get' to retrieve data.
+          schema:
+            type: string
+            enum: [get]
+      responses:
+        '200':
+          description: Successfully retrieved data.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    question:
+                      type: string
+                      description: A past question.
+                    answer:
+                      type: string
+                      description: The answer to the past question.
+                example:
+                  - question: "What is the capital of France?"
+                    answer: "Paris"
+                  - question: "Who wrote 'To Kill a Mockingbird'?"
+                    answer: "Harper Lee"
+components:
+  schemas: {}
